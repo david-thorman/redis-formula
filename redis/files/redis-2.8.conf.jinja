@@ -101,6 +101,10 @@ rename-command {{ k }} {{ v }}
 maxclients {{ redis_settings.maxclients }}
 {% endif -%}
 
+{% if redis_settings.timeout is defined %}
+timeout {{ redis_settings.timeout }}
+{% endif -%}
+
 {% if redis_settings.maxmemory is defined %}
 maxmemory {{ redis_settings.maxmemory }}
 maxmemory-policy {{ redis_settings.maxmemory_policy }}
